@@ -11,5 +11,5 @@ __DllGetClassObject(CLSID_VdjPlugin8, IID_IVdjPluginDsp8, &plugin_class);
 auto plugin = static_cast<IVdjPluginDsp8*>(plugin_class);
 
 TVdjPluginInfo8 infos;
-plugin-> OnGetPluginInfo(&infos);
+plugin->OnGetPluginInfo(&infos);
 //infos->PluginName 
