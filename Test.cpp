@@ -1,3 +1,4 @@
+#define NODLLEXPORT
 #include "vdjDsp8.h"
 
 const char* strDLLpath = "xxx\plugin.dll";
