@@ -10,6 +10,8 @@ auto plugin_DllGetClassObject = reinterpret_cast<DllGetClassObjectNoExport>(GetP
 HRESULT hr;
 void* plugin_class = nullptr;
 hr = plugin_DllGetClassObject(CLSID_VdjPlugin8, IID_IVdjPluginDsp8, &plugin_class);
+// if (hr == CLASS_E_CLASSNOTAVAILABLE)
+// if (hr == NO_ERROR)
 auto plugin = static_cast<IVdjPluginDsp8*>(plugin_class);
         
 // TODO: define IVdjCallbacks8;
