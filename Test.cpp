@@ -7,13 +7,14 @@ auto module = LoadLibraryA(strDLLpath);
 using DllGetClassObjectNoExport = HRESULT (VDJ_API *)(const GUID&, const GUID&, void**);
 auto plugin_DllGetClassObject = reinterpret_cast<DllGetClassObjectNoExport>(GetProcAddress(module, "DllGetClassObject"));
 
+HRESULT hr;
 void* plugin_class = nullptr;
-plugin_DllGetClassObject(CLSID_VdjPlugin8, IID_IVdjPluginDsp8, &plugin_class);
+hr = plugin_DllGetClassObject(CLSID_VdjPlugin8, IID_IVdjPluginDsp8, &plugin_class);
 auto plugin = static_cast<IVdjPluginDsp8*>(plugin_class);
         
 // TODO: define IVdjCallbacks8;
 
-HRESULT hr;
+
 hr = plugin->OnLoad();
 
 TVdjPluginInfo8 infos;
